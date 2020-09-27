@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Support Ticket Reply</title>
+    <title>Online Support Ticket Reply</title>
 </head>
 <body>
 <p>
     {{ $reply->reply }}
 </p>
  
----
+-------------------------------
 <p>Replied by: {{ $user->name }}</p>
  
 <p>Title: {{ $ticket->title }}</p>

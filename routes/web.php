@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Ticket;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,4 @@ Route::group(['middleware' => 'auth'], function (){
    
  });
  
+ Route::any('/search', 'TicketsController@search')->name('search');

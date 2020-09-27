@@ -19,6 +19,7 @@ class OSPMailer
      * AppMailer constructor.
      * @param $mailer
      */
+     
     public function __construct(Mailer $mailer)
     {
         $this->mailer = $mailer;
@@ -34,16 +35,18 @@ class OSPMailer
  
         $this->data = compact('ticket');
  
+       // die($ticket);
+        
         return $this->deliver();
     }
  
     public function sendTicketReply($user, Ticket $ticket, $reply)
     {
-        $this->to = $ticketOwner->email;
+        $this->to = $ticket->email;
  
         $this->subject = "RE: $ticket->title (Ticket ID: $ticket->ticket_id)";
  
-        $this->view = 'emails.ticket_comments';
+        $this->view = 'emails.replied_ticket_notification';
  
         $this->data = compact('user', 'ticket', 'reply');
  
